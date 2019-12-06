@@ -1,0 +1,11 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    timeZone: GMT+8:00
+  application:
+    name: zero-boot-web-sample
+server:
+  port: 8206
+logging:
+  level:
+    root: info

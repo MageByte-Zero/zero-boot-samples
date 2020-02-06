@@ -5,26 +5,16 @@
  -->
 <configuration scan="true" scanPeriod="60 seconds">
 
-	<property resource="application.yml" />
-	<include resource="logback-common.xml" />
+    <property resource="application.yml"/>
+    <include resource="logback-common.xml"/>
 
-	<!-- 异步输出sql -->
-	<!--<appender name ="asyncSqlAppender" class= "ch.qos.logback.classic.AsyncAppender">
-		&lt;!&ndash; 不丢失日志.默认的,如果队列的80%已满,则会丢弃TRACT、DEBUG、INFO级别的日志 &ndash;&gt;
-		<discardingThreshold >0</discardingThreshold>
-		&lt;!&ndash; 更改默认的队列的深度,该值会影响性能.默认值为256 &ndash;&gt;
-		<queueSize>512</queueSize>
-		&lt;!&ndash; 添加附加的appender,最多只能添加一个 &ndash;&gt;
-		<appender-ref ref ="sqlAppender"/>
-	</appender>-->
-
-
-	<root level="DEBUG">
-		<appender-ref ref="stdout" />
-		<appender-ref ref="allAppender" />
-		<appender-ref ref="infoAppender" />
-		<appender-ref ref="warnAppender" />
-		<appender-ref ref="errorAppender" />
-	</root>
+    <root level="debug">
+        <!--    异步使用 *Async，同步去掉 Async 即可   -->
+        <appender-ref ref="stdout"/>
+        <appender-ref ref="allAppenderAsync"/>
+        <appender-ref ref="infoAppenderAsync"/>
+        <appender-ref ref="warnAppenderAsync"/>
+        <appender-ref ref="errorAppenderAsync"/>
+    </root>
 
 </configuration>

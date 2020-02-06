@@ -1,0 +1,13 @@
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    timeZone: GMT+8:00
+  application:
+    name: zero-boot-logback-sample
+server:
+  port: 8207
+logging:
+  level:
+    root: info
+  file:
+    path: logs
